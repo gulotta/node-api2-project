@@ -22,4 +22,18 @@ router.get('/:id', (req, res) => {
     })
 })
 
+router.post('/', (req, res) => {
+    Posts.insert(req.body)
+    .then(post => {
+        res.status(201).json(post)
+       
+    })
+    .catch(err => {
+        console.log(err)
+        res.status(500).json({message: 'There was an error while saving the post to the database'})
+    })
+})
+
+
+
 module.exports = router
