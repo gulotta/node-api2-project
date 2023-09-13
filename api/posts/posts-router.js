@@ -6,8 +6,19 @@ const router = express.Router()
 
 router.get('/', (req, res) => {
     Posts.find(req)
-    .then(posts => {
-        res.status(200).json(posts)
+    .then(post => {
+        res.status(200).json(post)
+    })
+})
+
+router.get('/:id', (req, res) => {
+    Posts.findById(req.params.id)
+    .then(post => {
+       if (post) {
+        res.status(200).json(post)
+       } else {
+        res.status(404).json({ message: "The post with the specified ID does not exist"})
+       }
     })
 })
 
