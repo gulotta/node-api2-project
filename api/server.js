@@ -10,15 +10,6 @@ server.use(express.json());
 server.use('/api/posts', postsRouter)
 
 
-// const commentsRouter = require('./comments/comments-router')
-
-
-
-
-
-// server.use('/api/posts/:id/comments')
-
-
 server.get('/', (req, res) => {
     res.send('Hello from server')
 })

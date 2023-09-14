@@ -27,17 +27,6 @@ router.get('/:id', (req, res) => {
     })
 })
 
-// router.post('/', (req, res) => {
-//     Posts.insert(req.body)
-//     .then(post => {
-//         res.status(201).json(post)
-       
-//     })
-//     .catch(err => {
-//         console.log(err)
-//         res.status(500).json({message: 'There was an error while saving the post to the database'})
-//     })
-// })
 
 router.post('/', (req, res) => {
     const {title, contents} = req.body
@@ -61,22 +50,6 @@ router.post('/', (req, res) => {
     }
 })
 
-// router.put('/:id', (req, res) => {
-//     const post = req.body;
-//     Posts.update(req.params.id, post)
-//     .then(post => {
-//         if(post) {
-//             res.status(200).json(post)
-            
-//         } else {
-//             res.status(404).json({ message: "The post with the specified ID does not exist"})
-//         }
-//     })
-//     .catch(err => {
-//         console.log(err)
-//         res.status(500).json({ message: "The post information could not be modified"})
-//     })
-// })
 
 router.put('/:id', (req, res) => {
     const {title, contents} = req.body
@@ -114,22 +87,6 @@ router.put('/:id', (req, res) => {
 })
 
 
-// router.delete('/:id', (req, res) => {
-//     Posts.remove(req.params.id)
-//     .then(count => {
-//         if (count > 0) {
-//             res.status(200).json({message: "The post has been deleted"})
-//             Posts.findById(req.params.id)
-//         } else {
-//             res.status(404).json({message: 'The post with the specified ID does not exist'})
-//         }
-//         })
-//         .catch(err => {
-//             console.log(err)
-//             res.status(500).json({message: 'The post could not be removed'})
-//         })
-
-//     })
 
 router.delete('/:id', async (req, res) => {
     try {
